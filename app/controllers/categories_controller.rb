@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.active
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   # GET /categories/new.json
   def new
-    @category = Category.new
+    @category = Category.new(:is_active => true)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -73,7 +73,9 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1.json
   def destroy
     @category = Category.find(params[:id])
-    @category.destroy
+    # @category.destroy
+    @category.update_attributes(:is_active => false)
+
 
     respond_to do |format|
       format.html { redirect_to categories_url }
