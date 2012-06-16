@@ -16,7 +16,7 @@
   <% if false %>
     <%= f.text_field :name %>
   <% else %>
-    <%= @category.name %>
+    <%= f.text_field :name, :readonly => true %>
   <% end %>
   </div>
   <div class="field">
