@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   # GET /categories/new.json
   def new
-    @category = Category.new(:is_active => true)
+    @category = Category.new(:name => 'Jett')
 
     respond_to do |format|
       format.html # new.html.erb

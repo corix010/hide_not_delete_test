@@ -13,14 +13,16 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
   <% if false %>
+    <%= f.text_field :name %>
+  <% else %>
+    <%= :name %>
+  <% end %>
+  </div>
   <div class="field">
     <%= f.label :is_active %><br />
     <%= f.check_box :is_active %>
   </div>
-  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
